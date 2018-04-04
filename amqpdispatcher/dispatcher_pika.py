@@ -26,7 +26,7 @@ def connection_params(user, password, host, port, vhost, heartbeat):
     if port:
         netloc = '{0}:{1}'.format(netloc, port)
 
-    query = 'heartbeat={0}'.format(heartbeat)
+    query = 'heartbeat_interval={0}'.format(heartbeat)
 
     url = urlunparse(('amqp', netloc, vhost, '', query, ''))
     params = pika.URLParameters(url)
